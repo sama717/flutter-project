@@ -2,14 +2,17 @@ import 'package:authentication/Core/utilities/validation.dart';
 import 'package:flutter/material.dart';
 
 class VerifyWidget extends StatelessWidget {
-  const VerifyWidget({Key? key}) : super(key: key);
+  const VerifyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Verification Pin"),
+        const Text(
+          "VERIFICATION PIN",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(4, (index) => _buildPinField()),

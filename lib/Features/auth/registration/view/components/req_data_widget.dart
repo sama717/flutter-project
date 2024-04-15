@@ -10,6 +10,7 @@ class ReqDataWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const Text("REGISTRATION",style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
         //First Name
         Padding(
           padding: const EdgeInsets.all(8.0),

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:authentication/Core/utilities/validation.dart';
 
 class PassWidget extends StatelessWidget {
-  const PassWidget({Key? key}) : super(key: key);
+  const PassWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const Text("UPDATE PASSWORD",style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: TextFormField(

@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:authentication/Core/utilities/validation.dart';
 
 class ForgetDataWidget extends StatelessWidget {
-  const ForgetDataWidget({Key? key}) : super(key: key);
+  const ForgetDataWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const Text(
+          "CONFIRMATION",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: TextFormField(

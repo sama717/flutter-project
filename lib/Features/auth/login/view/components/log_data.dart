@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:authentication/Core/utilities/validation.dart';
 
 class LogData extends StatelessWidget {
-  const LogData({Key? key}) : super(key: key);
+  const LogData({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +11,7 @@ class LogData extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text("LOGIN",style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
           // Phone Number
           Padding(
             padding: const EdgeInsets.all(8.0),
