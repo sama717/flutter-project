@@ -1,4 +1,5 @@
 import 'package:authentication/Features/auth/forgot_pass/view/page/forgot_page.dart';
+import 'package:authentication/Features/dashboard/dashboard/view/page/dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:authentication/Features/auth/registration/view/page/registration_page.dart';
 
@@ -16,7 +17,11 @@ class BotNavWidget extends StatelessWidget {
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
             onPressed: () {
-              //Nav to app
+             Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DashboardPage()),
+              );
             },
             child: const Text("Login"),
           ),
