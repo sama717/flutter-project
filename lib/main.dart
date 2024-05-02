@@ -22,4 +22,6 @@ void main() async {
     builder: (context) => materialApp, // Wrap your app
   ),);
   FlutterNativeSplash.remove();
+
+
 }

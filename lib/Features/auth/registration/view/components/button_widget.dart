@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:authentication/Features/auth/login/view/page/login_page.dart';
 import 'package:authentication/Features/auth/verify/view/page/verify_page.dart';
+import 'package:authentication/Features/dashboard/modules/users/model/repo/local_db.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
@@ -15,7 +18,9 @@ class ButtonWidget extends StatelessWidget {
           child: FilledButton(
               style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.blueAccent)),
-              onPressed: () {
+              onPressed: () async{
+               await (await DatabaseRepo.instance).insert(name: "gehad" , address: "cairo");
+               log("added successfully");
                 Navigator.push(
                   context,
                   MaterialPageRoute(

@@ -1,9 +1,13 @@
 import 'package:authentication/Features/dashboard/dashboard/controller/cubit/dashboard_controller_cubit.dart';
+import 'package:authentication/Features/dashboard/modules/users/view/page/user_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DashboardPage extends StatelessWidget {
+
+  final List<String> titles = const ["Home", "Wallets" , "Account"];
+
   const DashboardPage({super.key});
 
   @override
@@ -14,12 +18,26 @@ class DashboardPage extends StatelessWidget {
         builder: (context, state) {
           DashboardControllerCubit controller = context.read<DashboardControllerCubit>();
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.yellow,
+              title: Text( titles[controller.selectedTapIndex],),
+              actions: [
+                IconButton(
+                    onPressed:()
+              {
+                Navigator.pushNamed(context, "Login");
+              },
+                icon: Icon(CupertinoIcons.add))
+              ],
+
+            ),
             body: PageView(
               controller: controller.pageController,
               onPageChanged: controller.onChangeTabIndex,
               children: const [
                 Text('Home'),
-                Text('Wallets'),
+                UserPage(),
+                Text('Wallet'),
                 Text('Account'),
               ],
             ),
