@@ -19,10 +19,9 @@ class RegistrationPage extends StatelessWidget {
               body: ReqDataWidget(
                 controller: controller,
               ),
-              bottomNavigationBar: SizedBox(
+              bottomNavigationBar: const SizedBox(
                 height: 200,
                 child: ButtonWidget(
-                  controller: controller,
                 ),
               ),
             );

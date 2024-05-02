@@ -59,9 +59,9 @@ class ReqDataWidget extends StatelessWidget {
                     controller: controller.mailController,
                     keyboardType: TextInputType.emailAddress,
                     validator: Validation().mailValidation,
-                    inputFormatters: [FilteringTextInputFormatter.allow(RegExp(
-  r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-))],
+//                     inputFormatters: [FilteringTextInputFormatter.allow(RegExp(
+//   r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+// ))],
                     decoration: decoration.copyWith(
                         label: const Text("Email Address"),
                         hintText: "xxx@gmail.com",
@@ -76,9 +76,9 @@ class ReqDataWidget extends StatelessWidget {
                     controller: controller.phoneController,
                     keyboardType: TextInputType.phone,
                     validator: Validation().phoneValidation,
-                    inputFormatters: [FilteringTextInputFormatter.allow(RegExp(
-  r'^\+(?:[0-9] ?){6,14}[0-9]$',
-))],
+//                     inputFormatters: [FilteringTextInputFormatter.allow(RegExp(
+//   r'^\+(?:[0-9] ?){6,14}[0-9]$',
+// ))],
                     decoration: decoration.copyWith(
                         label: const Text("Phone Number"),
                         hintText: "+20 XXX XXX XXXX",
