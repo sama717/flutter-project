@@ -9,7 +9,7 @@ class UserItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Colors.blue,
+      color: Colors.yellow,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
