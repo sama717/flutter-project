@@ -31,10 +31,27 @@ class FirebaseRepo extends ParentRepo{
   }
 
   @override
-   Future<void> delete({required int id}) async {
+   Future<void> delet({required int id}) async {
+    CollectionReference users =FirbaseFirstore.instance.collection('users');
+    await users
+        .docs(id.toString())
+        .update({'company': 'stokes and songs'})
+        .then((_) => print("user updated"));
+
 
   }
 
+  @override
+  Future<void> insert({required String name, String? address}) async {
+    CollectionReference users =FirbaseFirstore.instance.collection('users');
+    await users
+      .add({
+      'full_name': name;
+      'address': address;
+      })
+     .then((value) =>print("user added"))
+
+  }
   @override
   Future<void> insert({required String name, String? address}) async {
 

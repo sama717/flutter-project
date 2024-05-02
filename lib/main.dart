@@ -5,9 +5,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await MyFirebase.init();
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   bool onBoarding = sharedPreferences.getBool('onboarding') ?? false;
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
