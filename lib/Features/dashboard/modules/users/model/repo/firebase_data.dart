@@ -31,22 +31,13 @@ class FirebaseRepo extends ParentRepo{
   }
 
   @override
-  Future<void> delete({required int id}) async {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-    await users.doc(id.toString()).update({'company': 'Stokes and Sons'}).then((_) => print("User Updated"));
+   Future<void> delete({required int id}) async {
 
   }
 
   @override
   Future<void> insert({required String name, String? address}) async {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-    await users
-        .add({
-      'name': name, // John Doe
-      'address': address, // Stokes and Sons
-    })
-        .then((value) => print("User Added"))
-        .catchError((error) => print("Failed to add user: $error"));
+
   }
 
 }
