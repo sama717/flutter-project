@@ -18,7 +18,7 @@ void main() async {
     home: onBoarding ? const LoginPage() : const OnBoardingPage(),
   );
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) => materialApp, // Wrap your app
   ),);
   FlutterNativeSplash.remove();

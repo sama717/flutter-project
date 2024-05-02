@@ -12,7 +12,6 @@ class VerifyBotNav extends StatelessWidget {
       create: (context) => VerificationCubit(),
       child: BlocBuilder<VerificationCubit, VerificationState>(
         builder: (context, state) {
-          final VerificationCubit cubit = context.read<VerificationCubit>();
           return Column(
             children: [
               Padding(

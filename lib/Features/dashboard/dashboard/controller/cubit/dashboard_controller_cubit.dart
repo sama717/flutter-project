@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 part 'dashboard_controller_state.dart';
 
 class DashboardControllerCubit extends Cubit<DashboardControllerState> {
+  DashboardControllerCubit() : super(DashboardChangeState());
   int selectedTapIndex = 0;
   final PageController pageController = PageController();
 
@@ -12,6 +13,4 @@ class DashboardControllerCubit extends Cubit<DashboardControllerState> {
     pageController.jumpToPage(selectedTapIndex);
     emit(DashboardChangeState());
   }
-
-  DashboardControllerCubit() : super(DashboardChangeState());
 }
