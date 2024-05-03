@@ -33,7 +33,7 @@ class FirebaseRepo extends ParentRepo{
    Future<void> delet({required int id}) async {
     CollectionReference users =FirebaseFirestore.instance.collection('users');
     await users
-        .docs(id.toString())
+        .doc(id.toString())
         .update({'company': 'stokes and songs'})
         .then((_) => print("user updated"));
 
@@ -45,11 +45,17 @@ class FirebaseRepo extends ParentRepo{
     CollectionReference users =FirebaseFirestore.instance.collection('users');
     await users
       .add({
-      'full_name': name;
-      'address': address;
+      'full_name': name,
+      'address': address,
       })
      .then((value) =>print("user added"));
 
+  }
+
+  @override
+  Future<void> delete({required int id}) {
+    // TODO: implement delete
+    throw UnimplementedError();
   }
 
 

@@ -47,9 +47,9 @@ dependencies:
 
   firebase_crashlytics: ^2.9.0
   firebase_remote_config: ^2.0.20
-  cloud_firestore: ^3.5.1
   flutter_native_splash: ^2.3.10
   firebase_dynamic_links: ^4.3.11
+  cloud_firestore: ^3.5.1
 
 dev_dependencies:
   flutter_test:

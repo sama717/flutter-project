@@ -11,7 +11,7 @@ import 'Core/firebase/my_firebase.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MyFirebase.init();
+  await MyFirebase().init();
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   bool onBoarding = sharedPreferences.getBool('onboarding') ?? false;
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

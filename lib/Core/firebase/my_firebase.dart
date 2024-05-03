@@ -7,21 +7,30 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import '../../firebase_options.dart';
 
 class MyFirebase {
-  Future<void> init () async {
+  Future<void> init() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
     var FirbaseCrashlytics;
     FlutterError.onError = FirbaseCrashlytics.instance.recordFlutterFatalError;
   }
-  Future<String> init () async {
-   final FirebaseRemoteConfig remoteConfig =FirebaseRemoteConfig.instance;
-   await remoteConfig.fetchAndActivate();
-   await remoteConfig.setConfigSettings(
-     RemoteConfigSettings(
-       fetchTimeout: const Duration(minutes:1), minimumFetchInterval: const Duration(seconds:1),
-     ),
-   );
-    var value =remoteConfig.getString("url");
+
+  Future<String> serverUrl() async {
+    String value = "";
+    try {
+      final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
+      await remoteConfig.fetchAndActivate();
+      await remoteConfig.setConfigSettings(
+        RemoteConfigSettings(
+          fetchTimeout: const Duration(minutes: 1),
+          minimumFetchInterval: const Duration(seconds: 1),
+        ),
+      );
+      value = remoteConfig.getString("url");
+    }
+    catch (e) {
+      value = "";
+    }
+    return value;
   }
 }
