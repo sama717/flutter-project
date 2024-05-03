@@ -2,7 +2,6 @@
 import 'package:authentication/Features/dashboard/modules/users/model/repo/parent_data.dart';
 import 'package:authentication/Features/dashboard/modules/users/model/repo/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 class FirebaseRepo extends ParentRepo{
   static FirebaseRepo? instance= FirebaseRepo._init();
   // _singletoneObject;
@@ -32,7 +31,7 @@ class FirebaseRepo extends ParentRepo{
 
   @override
    Future<void> delet({required int id}) async {
-    CollectionReference users =FirbaseFirstore.instance.collection('users');
+    CollectionReference users =FirebaseFirestore.instance.collection('users');
     await users
         .docs(id.toString())
         .update({'company': 'stokes and songs'})
@@ -43,18 +42,15 @@ class FirebaseRepo extends ParentRepo{
 
   @override
   Future<void> insert({required String name, String? address}) async {
-    CollectionReference users =FirbaseFirstore.instance.collection('users');
+    CollectionReference users =FirebaseFirestore.instance.collection('users');
     await users
       .add({
       'full_name': name;
       'address': address;
       })
-     .then((value) =>print("user added"))
+     .then((value) =>print("user added"));
 
   }
-  @override
-  Future<void> insert({required String name, String? address}) async {
 
-  }
 
 }
